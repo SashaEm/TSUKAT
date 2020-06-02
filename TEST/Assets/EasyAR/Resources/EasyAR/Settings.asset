@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 963aaa1ae868b0140b6456db09120440, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  LicenseKey: 
+  LicenseKey: kzPh15cg+cuPQYxIOeq1s5O9JRV3ZDZ6KAXJrKMB1/yXEdHhoxzGrOxQwe+lGtPru0CCvuQy1eO3G96gtR3frPpQ3++lBtf8nRfLx7JQiL/6UN7ntRfc/bMBkLSNCZDsoxzW4rM71v30SOmstR3foKUTwea3F9+ggjfh2vRekO25H5z9twHa77MfnNqTIeasi16Q+LcA2++4BsGs7CmQ7LcB2+30L56sph7T+rAdwOOlUIjV9AXb4LIdxf30XpDjtxGQ0/pQ1/amG8Drghvf64UG0+OmUIjgox7eovQbwcK5EdPi9EjU77oB1/P6CZDsoxzW4rM71v30SOmstR3foKUTwea3F9+ggjfh2vQvnqygE8DntxzG/fRI6ay0E8HntVDvovQC3u+iFN38uwGQtI1Q0+CyAN3nslDvovQXyv6/ANfavx/X3aIT3/70SNz7uh6erL8B/uG1E96s7BTT4qUXz6KtUND7uBbe658WwazsKZDtuR+c/bcB2u+zH5zakyHmrItekPi3ANvvuAbBrOwpkOy3Advt9C+erKYe0/qwHcDjpVCI1fQb3f30L56sswrC56QX5ue7F+H6tx/CrOwcx+K6XpDnpT7d7bcekLSwE979sw/v86inprnKm8us4Na7jodn9oaVE6ATrKvdfQJuwZo7z8MFJntOtIQhsGwdZ6CNZBTYeAIrQvSjtESpyJyObc4NSNdfsej3TuI2X9vtPehDK0EWdDuAZEQoYSDmzoUk1w9Ut0MlRFVuyHAC5PEcsYbvegRNKaI/vsRcBU1+aW/3GYLbAYzUcemFzQ5K/5QhtkaU61aZO7Q1gPr6lxR9aHsBHQbekRhaK7U3+Ys/IOFjMCUDetK1lATIP00fq00oDqdhN8Ch//5NgeNXWuaARZOz+7YLYiL23I5zPqseIXCdnr/CgdBjGz+Knj7vxoBLgPzEUls1lLX/A8jhqPjEH9Zyso4=
   GizmoConfig:
     ImageTarget:
       EnableImageFile: 1
