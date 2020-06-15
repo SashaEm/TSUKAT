@@ -128,6 +128,7 @@ namespace easyar
             {
                 return;
             }
+            
             target.Tracker = this;
         }
 
@@ -233,6 +234,7 @@ namespace easyar
                 if (TargetLoad != null)
                 {
                     TargetLoad(controller, target, status);
+                    
                 }
                 if (callback != null)
                 {
@@ -260,7 +262,7 @@ namespace easyar
                 });
             }
         }
-
+         
         protected override void OnHFlipChange(bool hFlip)
         {
             foreach (var value in allTargetController.Values)
