@@ -3,6 +3,7 @@
 public class RaycastFromCamera : MonoBehaviour
 {
     [SerializeField] private Camera camera;
+    
 
     private void OnValidate()
     {
@@ -10,7 +11,6 @@ public class RaycastFromCamera : MonoBehaviour
             camera = Camera.main;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector2 mouseScreenPosition = Input.mousePosition;
@@ -20,7 +20,7 @@ public class RaycastFromCamera : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                raycastHit.collider.GetComponent<Renderer>().material.color = Color.green;
+                
             }
             
         }

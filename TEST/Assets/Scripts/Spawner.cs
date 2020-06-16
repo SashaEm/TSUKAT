@@ -14,10 +14,9 @@ public class Spawner : MonoBehaviour
         float obstacle = Random.Range(0f, gameObjects.Length);
         if(interval <= 0f)
         {
-            GameObject gameObject = gameObjects[(int)obstacle];
-            Instantiate(gameObject, transform.position, transform.rotation);
-            gameObject.SetActive(true);
-            Destroy(gameObject, 3f);
+            GameObject gameObject1 = gameObjects[(int)obstacle];
+            Instantiate(gameObject1, transform.position, transform.rotation);
+            gameObject1.SetActive(true);
             interval = startInterval;
         }
     }
