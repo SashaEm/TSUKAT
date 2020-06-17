@@ -5,9 +5,15 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private float startInterval = 5f;
-    [SerializeField] private float interval = 5f;
     [SerializeField] private GameObject[] gameObjects;
+    [SerializeField] private float lifeTime = 2f;
 
+    private float interval = 5f;
+
+    void Awake()
+    {
+        interval = startInterval;
+    }
     void Update()
     {
         interval -= Time.deltaTime;
@@ -15,8 +21,9 @@ public class Spawner : MonoBehaviour
         if(interval <= 0f)
         {
             GameObject gameObject1 = gameObjects[(int)obstacle];
-            Instantiate(gameObject1, transform.position, transform.rotation);
-            gameObject1.SetActive(true);
+            GameObject instance = Instantiate(gameObject1, transform.position, transform.rotation);
+            instance.SetActive(true);
+            Destroy(instance, lifeTime);
             interval = startInterval;
         }
     }

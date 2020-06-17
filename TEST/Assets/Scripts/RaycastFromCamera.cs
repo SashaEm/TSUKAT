@@ -2,27 +2,30 @@
 
 public class RaycastFromCamera : MonoBehaviour
 {
-    [SerializeField] private Camera camera;
-    
+    [SerializeField] private Camera cameraMain;
 
     private void OnValidate()
     {
-        if (camera == null)
-            camera = Camera.main;
+        if (cameraMain == null)
+            cameraMain = Camera.main;
     }
 
     void Update()
     {
         Vector2 mouseScreenPosition = Input.mousePosition;
-        Ray ray = camera.ScreenPointToRay(mouseScreenPosition);
+        Ray ray = cameraMain.ScreenPointToRay(mouseScreenPosition);
 
-        if(Physics.Raycast(ray, out RaycastHit raycastHit))
+        
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButton(0))
+            if (Physics.Raycast(ray, out RaycastHit raycastHit))
             {
-                
+                var clickRegister = raycastHit.transform.GetComponent<ClickRegister>();
+                if (clickRegister != null)
+                {
+                    clickRegister.ChangeColor();
+                }
             }
-            
         }
     }
 }

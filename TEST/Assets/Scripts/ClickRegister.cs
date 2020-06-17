@@ -4,23 +4,29 @@ using UnityEngine;
 
 public class ClickRegister : MonoBehaviour
 {
+
     [SerializeField] private Material red;
-    [SerializeField] private Material yellow;
+    [SerializeField] private Material green;
     [SerializeField] private Material black;
+
+    private Renderer rend;
 
     public void ChangeColor()
     {
-        switch (renderer.material)
-        {
-            case renderer.material == red:
-                renderer.material = yellow;
-            case renderer.material == yellow:
-                Destroy(gameObject);
-            case renderer.material == black:
-                //TODO: Lose();
+        if (rend == null)
+            rend = GetComponent<Renderer>();
 
-            default:
-                break;
+        var material = rend.sharedMaterial;
+        if (material == red)
+        {
+            rend.sharedMaterial = green;
+        }
+        else if (material == green)
+        {
+            Destroy(gameObject);
+        }else if (material == black)
+        {
+            Debug.Log("Lose");
         }
     }
 }
