@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5864251801735198129
+--- !u!1 &4628519015523359323
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5864251801735198142}
-  - component: {fileID: 5864251801735198143}
+  - component: {fileID: 4628519015523359322}
+  - component: {fileID: 4628519015523359317}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: SpawnManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5864251801735198142
+--- !u!4 &4628519015523359322
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5864251801735198129}
+  m_GameObject: {fileID: 4628519015523359323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,20 +31,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5864251801735198143
+--- !u!114 &4628519015523359317
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5864251801735198129}
+  m_GameObject: {fileID: 4628519015523359323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b56c2a7a8026ed443b6d96121dc961fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 7955d0cfab5bf1c4085b542b161e51ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 8006094177137357515, guid: d433330e62a557e498d4c416d0404468, type: 3}
-  cameraMain: {fileID: 0}
-  scoreText: {fileID: 0}
-  redText: {fileID: 0}
-  greenText: {fileID: 0}
+  cornerTopLeft: {fileID: 0}
+  cornerTopRight: {fileID: 0}
+  cornerBottomLeft: {fileID: 0}
+  cornerBottomRight: {fileID: 0}
+  spawner: {fileID: 0}
+  scaling: 1.25
