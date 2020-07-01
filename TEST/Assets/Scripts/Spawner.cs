@@ -12,7 +12,8 @@ public class Spawner : MonoBehaviour
     private float timer = 0f;
 
     public SpawnManager somethingManager;
-
+    
+    // Це не зрозуміло для чого. Воно не використовується? 
     private readonly List<Vector2> directions = new List<Vector2>
     {
         Vector2.up,
@@ -45,6 +46,7 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
+        // тут дуже зле. Купа якихось чисел, купа else. Це треба переробити.  
         timer += Time.deltaTime;
         if (timer < 15f)
         {
