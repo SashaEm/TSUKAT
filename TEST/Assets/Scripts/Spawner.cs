@@ -12,19 +12,11 @@ public class Spawner : MonoBehaviour
     private float timer = 0f;
 
     public SpawnManager somethingManager;
+
+    private ScoreManager ScoreManager;
     
+
     // Це не зрозуміло для чого. Воно не використовується? 
-    private readonly List<Vector2> directions = new List<Vector2>
-    {
-        Vector2.up,
-        Vector2.right,
-        Vector2.down,
-        Vector2.left,
-        new Vector2(1,1).normalized, // up+right
-        new Vector2(1,-1).normalized, // down+right
-        new Vector2(-1,-1).normalized, // down+left
-        new Vector2(-1,1).normalized, // up+left
-    };
 
     private void Awake()
     {
@@ -39,40 +31,18 @@ public class Spawner : MonoBehaviour
 
     private void OnDisable()
     {
-        RaycastFromCamera.score = 0;
-        RaycastFromCamera.redMissCount = 0;
-        RaycastFromCamera.greenMissCount = 0;
+        ScoreManager.score = 0;
+        ScoreManager.redMissCount = 0;
+        ScoreManager.greenMissCount = 0;
+        ScoreManager.ChangeScore();
     }
 
     private void Update()
     {
         // тут дуже зле. Купа якихось чисел, купа else. Це треба переробити.  
         timer += Time.deltaTime;
-        if (timer < 15f)
-        {
-            startInterval = 5f;
-            lifeTime = 5f;
-        }else if (timer < 30f)
-        {
-            startInterval = 4f;
-            lifeTime =4.5f;
-        }
-        else if (timer < 45f)
-        {
-            startInterval = 3f;
-            lifeTime =4f;
-        }
-        else if(timer < 60f)
-        {
-            startInterval = 2f;
-            lifeTime = 3.5f;
-        }
-        else
-        {
-            startInterval = 1.5f;
-            lifeTime = 3f;
-        }
-      
+        startInterval = Mathf.Clamp(5f - ((int)timer / 15), 1.5f, 5f);
+        lifeTime = Mathf.Clamp(5f - ((int)timer / 15) * 0.5f, 3f, 5f);
 
         interval -= Time.deltaTime;
         if (interval > 0)
@@ -89,7 +59,6 @@ public class Spawner : MonoBehaviour
     {
         var randomPrefab = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)];
         var instance = Instantiate(randomPrefab, pos, transform.rotation);
-        //instance.Initialize(directions[Random.Range(0, directions.Count)]);
         Destroy(instance.gameObject, lifeTime);
     }
 }

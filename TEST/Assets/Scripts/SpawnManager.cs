@@ -13,6 +13,8 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] private float scaling = 1;
       // тут щось загадкове і не зовсім зрозуміле. Ну, я розумію, що ти так пробуєш обмежити області появи кульок, але якось це не дуже красиво
+
+    // я знаходжу точки країв нашого маркера відносно лівого нижнього кута, це потрібно для ремапінгу з локальної позиції щоб отримати глобальну
     private Vector3 BottomLeft => cornerBottomLeft.position;
     private Vector3 BottomRight => cornerBottomLeft.position + Vector3.right * Vector3.Distance(cornerBottomLeft.position, cornerBottomRight.position) * scaling;
     private Vector3 TopLeft => cornerBottomLeft.position + Vector3.up * Vector3.Distance(cornerBottomLeft.position, cornerTopLeft.position) * scaling;

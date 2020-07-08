@@ -9,7 +9,8 @@ public class Restart : MonoBehaviour
     public void RestartGame()
     {
         // Не варто зашивати жорстко назву сцени в код. Через місяць сцену переіменуєш і будеш шукати чого не працює.
-        SceneManager.LoadScene("GameScene");
+        int y = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(y);
         panel.SetActive(false);
         Time.timeScale = 1f;
     }

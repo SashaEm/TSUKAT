@@ -10,13 +10,14 @@ public class ClickRegister : MonoBehaviour
     [SerializeField] private Material green;
     [SerializeField] private Material black;
 
-    
-     private bool isClicked = false;
+    private ScoreManager ScoreManager;
+
+    private bool isClicked = false;
     [HideInInspector] public static bool isLost = false;
 
     private Renderer rend;
 
-
+    private readonly RaycastFromCamera RaycastFromCamera;
 
     public void ChangeColor()
     {
@@ -49,11 +50,13 @@ public class ClickRegister : MonoBehaviour
         {
             if (material == red)
             {
-                RaycastFromCamera.redMissCount += 1;
+                ScoreManager. redMissCount += 1;
+                ScoreManager.ChangeScore();
             }
             else if (material == green)
             {
-                RaycastFromCamera.greenMissCount += 1;
+                ScoreManager.greenMissCount += 1;
+                ScoreManager.ChangeScore();
             }
         }
     }

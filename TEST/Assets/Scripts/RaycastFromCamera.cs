@@ -13,13 +13,8 @@ public class RaycastFromCamera : MonoBehaviour
     // 1. робимо спеціальний клас, вішаємо на якийсь об'єкт, і натягуємо його куди треба, щоб отримати доступ до нього 
     // 2. Робимо якийсь singlton - і використовуємо його. Але не захоплюватися таким методом. 
     
-    [HideInInspector] public static int score = 0;
-    [HideInInspector] public static int redMissCount = 0;
-    [HideInInspector] public static int greenMissCount = 0;
     
-    [SerializeField] private Text scoreText;
-    [SerializeField] private Text redText;
-    [SerializeField] private Text greenText;
+    private ScoreManager ScoreManager;
 
     private void OnValidate()
     {
@@ -55,14 +50,14 @@ public class RaycastFromCamera : MonoBehaviour
                     clickRegister.ChangeColor();
                     if (clickRegister.CompareTag("GoodSphere"))
                     {
-                        score += 1;
+                        ScoreManager.score += 1;
+                        ScoreManager.ChangeScore();
                     }
                 }
             }
         }
         // Оновляти текстові поля в update не найкраще рішення. В тебе значення обновляються рідко. можна зробити краще. Обновляти тільки при зміні значення
-        scoreText.text = $"score: {score.ToString()}";
-        redText.text = $": {redMissCount.ToString()}";
-        greenText.text = $": {greenMissCount.ToString()}";
+       
     }
+    
 }
