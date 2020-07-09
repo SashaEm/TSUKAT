@@ -47,5 +47,5 @@ MonoBehaviour:
   cornerTopRight: {fileID: 0}
   cornerBottomLeft: {fileID: 0}
   cornerBottomRight: {fileID: 0}
-  spawner: {fileID: 0}
+  spawner: {fileID: 8006094177137357517, guid: d433330e62a557e498d4c416d0404468, type: 3}
   scaling: 1.25
