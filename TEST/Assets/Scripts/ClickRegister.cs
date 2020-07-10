@@ -10,15 +10,18 @@ public class ClickRegister : MonoBehaviour
     [SerializeField] private Material green;
     [SerializeField] private Material black;
 
+    private GameObject ScoreManagerInstance;
     private ScoreManager ScoreManager;
 
     private bool isClicked = false;
     [HideInInspector] public static bool isLost = false;
 
     private Renderer rend;
-
-    private readonly RaycastFromCamera RaycastFromCamera;
-
+    private void Awake()
+    {
+        ScoreManagerInstance = GameObject.Find("ScoreManager");
+        ScoreManager = ScoreManagerInstance.GetComponent<ScoreManager>();
+    }
     public void ChangeColor()
     {
         if (rend == null)
@@ -50,7 +53,7 @@ public class ClickRegister : MonoBehaviour
         {
             if (material == red)
             {
-                ScoreManager. redMissCount += 1;
+                ScoreManager.redMissCount += 1;
                 ScoreManager.ChangeScore();
             }
             else if (material == green)

@@ -6,7 +6,7 @@ public class ScoreManager : MonoBehaviour
     public int score = 0;
     public int redMissCount = 0;
     public int greenMissCount = 0;
-
+    
     [SerializeField] private Text scoreText;
     [SerializeField] private Text redText;
     [SerializeField] private Text greenText;
@@ -21,8 +21,18 @@ public class ScoreManager : MonoBehaviour
 
     public void ChangeScore()
     {
-        scoreText.text = $"score: {score.ToString()}";
-        redText.text = $": {redMissCount.ToString()}";
-        greenText.text = $": {greenMissCount.ToString()}";
+        if(scoreText != null)
+        {
+            scoreText.text = $"score: {score.ToString()}";
+        }
+        if(redText != null)
+        {
+            redText.text = $": {redMissCount.ToString()}";
+        }
+        if(greenText != null)
+        {
+            greenText.text = $": {greenMissCount.ToString()}";
+        }
+        
     }
 }

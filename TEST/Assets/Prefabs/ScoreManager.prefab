@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  redMissCount: 0
-  greenMissCount: 0
+  redMissCount: 5
+  greenMissCount: 7
   scoreText: {fileID: 0}
   redText: {fileID: 0}
   greenText: {fileID: 0}

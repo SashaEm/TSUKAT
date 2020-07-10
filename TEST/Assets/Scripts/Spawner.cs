@@ -6,17 +6,14 @@ public class Spawner : MonoBehaviour
     [SerializeField] private static float startInterval = 5f;
     [SerializeField] private SphereInstance[] obstaclePrefabs;
     [SerializeField] private float lifeTime = 2f;
+    [SerializeField] private SpawnManager somethingManager;
 
     private float randomInterval;
     private float interval = 5f;
     private float timer = 0f;
 
-    public SpawnManager somethingManager;
-
-    private ScoreManager ScoreManager;
+    [SerializeField] private ScoreManager scoreManager;
     
-
-    // Це не зрозуміло для чого. Воно не використовується? 
 
     private void Awake()
     {
@@ -31,10 +28,10 @@ public class Spawner : MonoBehaviour
 
     private void OnDisable()
     {
-        ScoreManager.score = 0;
-        ScoreManager.redMissCount = 0;
-        ScoreManager.greenMissCount = 0;
-        ScoreManager.ChangeScore();
+        scoreManager.redMissCount = 0;
+        scoreManager.greenMissCount = 0;
+        scoreManager.score = 0;
+        scoreManager.ChangeScore();
     }
 
     private void Update()

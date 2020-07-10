@@ -14,7 +14,7 @@ public class RaycastFromCamera : MonoBehaviour
     // 2. Робимо якийсь singlton - і використовуємо його. Але не захоплюватися таким методом. 
     
     
-    private ScoreManager ScoreManager;
+    [SerializeField] private ScoreManager ScoreManager;
 
     private void OnValidate()
     {

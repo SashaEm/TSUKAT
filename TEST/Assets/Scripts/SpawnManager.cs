@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -33,7 +31,7 @@ public class SpawnManager : MonoBehaviour
          var targetPos = Vector3.Lerp(bottomX, topX, randY);                    // use bottomX and topX together with randY to find the relative ypos
          spawner.SpawnObstacle(targetPos);
     }
-    // No intellisense :(
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
